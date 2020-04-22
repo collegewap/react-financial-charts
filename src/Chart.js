@@ -49,13 +49,14 @@ class CandleStickChartWithCHMousePointer extends React.Component {
     const end = xAccessor(data[Math.max(0, data.length - 150)]);
     const xExtents = [start, end];
 
+    console.log(type);
     return (
       <ChartCanvas
         height={400}
         ratio={ratio}
         width={width}
         margin={{ left: 70, right: 70, top: 10, bottom: 30 }}
-        type={type}
+        type="hybrid "
         seriesName="MSFT"
         data={data}
         xScale={xScale}
@@ -115,8 +116,7 @@ class CandleStickChartWithCHMousePointer extends React.Component {
 CandleStickChartWithCHMousePointer.propTypes = {
   data: PropTypes.array.isRequired,
   width: PropTypes.number.isRequired,
-  ratio: PropTypes.number.isRequired,
-  type: PropTypes.oneOf(["svg", "hybrid"]).isRequired
+  ratio: PropTypes.number.isRequired
 };
 
 CandleStickChartWithCHMousePointer.defaultProps = {
